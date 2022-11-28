@@ -86,6 +86,30 @@
                 <use href="./images/icons.svg#icon-close"></use>
               </svg>
             </button>
+            <!-- Формування форми -->
+            <form class=".js-speaker-form">
+              <label for="name">Ім'я</label>
+              <input type="text" name="name" id="name" />
+
+              <label for="mail">Телефон</label>
+              <input type="tel" name="tel" id="tel" />
+
+              <label for="mail">Пошта</label>
+              <input type="email" name="mail" id="mail" />
+
+              <input type="checkbox" name="" id="" />
+
+              <label for="comment">Коментар</label>
+
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+
+              <input type="checkbox" name="" id="" />
+              <label for="comment">
+                Погоджуюся з розсилкою та приймаю Умови договору
+              </label>
+
+              <button type="submit">Відправити</button>
+            </form>
           </div>
         </div>
       </section>
@@ -479,5 +503,20 @@
     </footer>
 
     <script src="./js/modal.js"></script>
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
   </body>
 </html>
