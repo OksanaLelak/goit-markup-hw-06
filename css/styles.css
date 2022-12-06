@@ -300,10 +300,10 @@ img{
 	font-weight: 700;
 }
 
-.button:hover {
+/* .button:hover {
 	background-color: var(--white-background-color);
 	color: var(--accent-color);
-}
+} */
 
 /* -----Модальне вікно----- */
 .backdrop {
@@ -365,7 +365,7 @@ img{
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 10px;
+	/* margin-bottom: 10px; */
 }
 .form-label {
 	margin-bottom: 4px;
@@ -385,6 +385,14 @@ left: 0; */
 	position: relative;
 }
 
+.form-field-icon:focus-within>.modal-icon {
+	fill: var(--accent-color);
+}
+
+:focus-within~.form-input {
+	border: 1px solid var(--accent-color);
+}
+
 .form-input {
 		/* width: 100%; */
 		height: 40px;
@@ -395,6 +403,11 @@ left: 0; */
 		border-radius: 4px;
 		width: 448px;
 		
+}
+.form-input:hover,
+.form-input:focus {
+	outline: transparent;
+	border: 1px solid var(--accent-color);
 }
 
 .modal-icon {
@@ -433,6 +446,13 @@ left: 0; */
 		border: 1px solid rgba(33, 33, 33, 0.2);
 		border-radius: 4px;
 }
+
+.comment-textarea:hover,
+.comment-textarea:focus {
+		outline: transparent;
+			border: 1px solid var(--accent-color);
+}
+
 .comment-textarea::placeholder {
 	font-weight: 400;
 	font-size: 12px;
@@ -532,14 +552,21 @@ left: 0; */
 	border-radius: 50%;
 	display: flex;
 	cursor: pointer;
+	color: #000000;
+	fill: currentColor;
 	background-color: transparent;
 	}
 
 .close-icon {
 	width: 18px;
 	height: 18px;
+	fill: currentColor;
 }
 
+.close-icon:hover,
+.close-icon:focus {
+	color: var(--accent-color);
+}
 
 /* -----Особливості----- */
 			/* Секція */
@@ -841,6 +868,7 @@ padding-right: 15px;
 .contact-item .footer-contact-link:hover,
 .contact-item .footer-contact-link:focus {
 	color: var(--accent-color);
+	transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function);
 }
 
 .footer-contact-address{
@@ -962,28 +990,34 @@ gap: 12px;
 					padding-bottom: 15px;
 					padding-left: 16px;
 					background-color: #2196f300;
-					color: #ffffff4d;
+					color: #ffffff;
 					border: 1px solid #ffffff4d;
 					border-radius: 4px;
 }
 
 .footer-form-button {
-display: inline-block;
-width: 200px;
-height: 50px;
-font-weight: 700;
-font-size: 16px;
-line-height: 1.88;
-letter-spacing: 0.06em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	height: 50px;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.88;
+	letter-spacing: 0.06em;
 
-border: transparent;
-border-radius: 4px;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-background-color: var(--accent-color);
-color: var(--white-text-color);
-transition: background-color 250ms var(--timing-function);
-cursor: pointer;
+	border: transparent;
+	border-radius: 4px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	background-color: var(--accent-color);
+	color: var(--white-text-color);
+	transition: background-color 250ms var(--timing-function);
+	cursor: pointer;
 }
+.footer-button-icon {
+position: relative;
+margin-left: 10px;
+} 
 /* 
 
 
@@ -1010,12 +1044,10 @@ cursor: pointer;
 
 
 .footer-form-text {
-
+	
 }
 
-.footer-button-icon {
-position: relative;
-} */
+*/
 
 /* -----Портфоліо----- */
 .portfolio-section {
